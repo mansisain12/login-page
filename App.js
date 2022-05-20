@@ -4,118 +4,13 @@ import { View, Text, Button, TextInput, Image, StyleSheet } from "react-native";
 const App = () => {
   return (
     <View>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
       <View style={styles.view}>
-
-        <Image source={require('./assets/grocery1.jpeg')} style={{ width: 150, height: 150, marginLeft: 70 }} />
-        <Text style={styles.text}>Welcome back!</Text>
+      <Text>{"\n"} {"\n"} {"\n"} {"\n"}</Text>
+        <Image source={require('./assets/grocery.png')} style={{ width: 200, height: 50, marginLeft: 45 }} />
+        <Text style={styles.text}>Welcome back!  {"\n"}</Text>
         <TextInput placeholder="eg:example@gmail.com" style={styles.placeholder}></TextInput>
-        <TextInput placeholder="Password" keyboardType="numeric" style={styles.placeholder} />
-        <Text style={{ textAlign: "center" }}> Forgot Password? </Text>
+        <TextInput placeholder="Password" keyboardType="numeric" style={styles.placeholder}></TextInput>
+        <Text style={{ textAlign: "center",color:"lightgreen" }}>{"\n"} Forgot Password? </Text>
         <Text>{"\n"}</Text>
         <Button title="Login"></Button>
         <Text>{"\n"}</Text>
@@ -134,14 +29,16 @@ const App = () => {
 }
 const styles = StyleSheet.create({
   view: {
-    padding: 50, backgroundColor: "lightgreen", height: 900
+    padding: 50,height: 900
   },
   text: {
-    textAlign: "center", fontSize: 25
+    textAlign: "center", fontSize: 20,fontWeight:"700"
   },
   placeholder:
   {
-    margin: 12, borderWidth: 2, height: 35, borderRadius: 15
+    margin: 12, borderWidth: 2, height: 35,backgroundColor:"white",
+    borderColor:"white",
+    borderBottomColor:"lightgreen",
   },
 
   container: {
@@ -150,7 +47,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between"
   },
   button: {
-    backgroundColor: "blue",
+    Color: "green",
     width: "40%",
     height: 40,
   },
@@ -158,7 +55,7 @@ const styles = StyleSheet.create({
     textAlign: "center", fontSize: 18, fontWeight: "600"
   },
   image: {
-    width: 100, height: 40
+    width: 115, height: 40,borderWidth:2,borderColor:"grey"
   }
 })
 export default App;
