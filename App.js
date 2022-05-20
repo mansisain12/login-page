@@ -1,30 +1,30 @@
 import React from "react";
-import { View, Text, Button, TextInput, Image, StyleSheet} from "react-native";
+import { View, Text, Button, TextInput, Image, StyleSheet } from "react-native";
 
 const App = () => {
   return (
     <View>
-    <View style={styles.view}>
+      <View style={styles.view}>
 
-      <Image source={require('./assets/grocery1.jpeg')} style={{ width: 150, height: 150, marginLeft: 70 }} />
-      <Text style={styles.text}>Welcome back!</Text>
-      <TextInput placeholder="eg:example@gmail.com" style={styles.placeholder}></TextInput>
-      <TextInput placeholder="Password" keyboardType="numeric" style={styles.placeholder} />
-      <Text style={{ textAlign: "center" }}> Forgot Password? </Text>
-      <Text>{"\n"}</Text>
-      <Button title="Login"></Button>
-      <Text>{"\n"}</Text>
-      <Text style={{ fontWeight: "600" }}>_________________OR_________________</Text>
-      <Text>{"\n"}</Text>
-      <Text style={styles.login}>Continue with</Text>
-      <Text>{"\n"}</Text>
-      <View style={styles.container}>
-        <Button title="Facebook" style={styles.button}></Button>
-        <Button title="Google" style={styles.button}></Button>
+        <Image source={require('./assets/grocery1.jpeg')} style={{ width: 150, height: 150, marginLeft: 70 }} />
+        <Text style={styles.text}>Welcome back!</Text>
+        <TextInput placeholder="eg:example@gmail.com" style={styles.placeholder}></TextInput>
+        <TextInput placeholder="Password" keyboardType="numeric" style={styles.placeholder} />
+        <Text style={{ textAlign: "center" }}> Forgot Password? </Text>
+        <Text>{"\n"}</Text>
+        <Button title="Login"></Button>
+        <Text>{"\n"}</Text>
+        <Text style={{ fontWeight: "600" }}>_________________OR_________________</Text>
+        <Text>{"\n"}</Text>
+        <Text style={styles.login}>Continue with</Text>
+        <Text>{"\n"}</Text>
+        <View style={styles.container}>
+          <Image source={require('./assets/facebook.jpeg')} style={styles.image} />
+          <Image source={require('./assets/google1.jpeg')} style={styles.image} />
+        </View>
       </View>
     </View>
-    </View>
-  
+
   )
 }
 const styles = StyleSheet.create({
@@ -51,6 +51,9 @@ const styles = StyleSheet.create({
   },
   login: {
     textAlign: "center", fontSize: 18, fontWeight: "600"
+  },
+  image: {
+    width: 100, height: 40
   }
 })
 export default App;
