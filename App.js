@@ -1,46 +1,78 @@
-import React from "react";
-import { View, Text, TextInput, Image, StyleSheet, SafeAreaView, Button } from "react-native";
+import React, { Component } from "react";
+import { View, Text, TextInput, Image, StyleSheet,Button,TouchableOpacity } from "react-native";
 
-const App = () => {
-  return (
-    <View>
+class App extends React.Component {
+  constructor() {
+    super();
+    this.state = {
+      email: '',
+      emailError: '',
+      password: '',
+    }
+  }
+  emailValidator() {
+    if (this.state.email == "") {
+      this.setState({ emailError: "email field cannnot be empty" })
+    }
+    else {
+      this.setState({ emailError: "" })
+    }
+  }
 
-      <View style={styles.view}>
-        <Text>{"\n"} {"\n"} {"\n"} {"\n"} {"\n"}</Text>
-        <Image source={require('./assets/grocery.png')} style={{ width: 200, height: 50, marginLeft: 75 }} />
-        <Text style={styles.text}>Welcome back!  {"\n"} {"\n"}</Text>
+  render() {
+    return (
+      <View>
 
-        <SafeAreaView style={{ flex: 1 }}>
-          <View style={styles.icon}>
-            <View style={styles.sectionStyle}>
-              <Image source={require('./assets/email.jpeg')} style={styles.imgstyle} />
-              <TextInput placeholder="eg:example@gmail.com" style={{ flex: 1 }}></TextInput>
+        <View style={styles.view}>
+          <Text>{"\n"} {"\n"} {"\n"} {"\n"} {"\n"}</Text>
+          <Image source={require('./assets/grocery.png')} style={{ width: 200, height: 50, marginLeft: 75 }} />
+          <Text style={styles.text}>Welcome back!  {"\n"} {"\n"}</Text>
+
+            <View style={styles.icon}>
+          
+              <View style={styles.sectionStyle}>
+                <Image source={require('./assets/email.jpeg')} style={styles.imgstyle} />
+                <TextInput placeholder="eg:example@gmail.com"
+                  style={{ flex: 1 }}
+                  onBlur={() => this.emailValidator()}
+                  onChangeText={(text) => this.setState({ email: text })}
+                />
+                <Text style={{ color: "red" }}>{"\n"} {this.state.emailError}</Text>
+                
+              </View>
+
+              <View style={styles.sectionStyle}>
+                <Image source={require('./assets/key.jpeg')} style={styles.imgstyle}></Image>
+                <TextInput placeholder="Password"
+                  keyboardType="numeric"
+                  style={{ flex: 1 }}
+                  maxLength={5}
+                />
+                <Image source={require('./assets/eye.jpeg')} style={styles.imgstyle}></Image>
+              </View>
             </View>
-            <View style={styles.sectionStyle}>
-              <Image source={require('./assets/key.jpeg')} style={styles.imgstyle}></Image>
-              <TextInput placeholder="Password" keyboardType="numeric" style={{ flex: 1 }}></TextInput>
-              <Image source={require('./assets/eye.jpeg')} style={styles.imgstyle}></Image>
-            </View>
-          </View>
-        </SafeAreaView>
+  
+        </View>
+
+        <Text style={{ textAlign: "center", color: "lightgreen" }}>{"\n"} {"\n"} {"\n"} Forgot Password? </Text>
+        <Text>{"\n"}</Text>
+
+        <TouchableOpacity style={styles.button}>
+            <Text style={{fontSize:16}}>Login</Text>
+            </TouchableOpacity> 
+        <Text>{"\n"}</Text>
+        <Image source={require('./assets/or.png')} style={{ marginLeft: 22 }}></Image>
+        <Text>{"\n"}</Text>
+        <Text style={styles.login}>Continue with</Text>
+
+        <View style={styles.container}>
+          <Image source={require('./assets/facebook.jpeg')} style={styles.image} />
+          <Image source={require('./assets/google1.jpeg')} style={styles.image} />
+        </View>
       </View>
 
-      <Text style={{ textAlign: "center", color: "lightgreen" }}>{"\n"} {"\n"} {"\n"} Forgot Password? </Text>
-      <Text>{"\n"}</Text>
-
-      <Button title="Login" style={{ Color: "red", width: "40%", height: 40, }}></Button>
-      <Text>{"\n"}</Text>
-      <Image source={require('./assets/or.png')} style={{ marginLeft: 22 }}></Image>
-      <Text>{"\n"}</Text>
-      <Text style={styles.login}>Continue with</Text>
-      {/* <Text>{"\n"}</Text> */}
-      <View style={styles.container}>
-        <Image source={require('./assets/facebook.jpeg')} style={styles.image} />
-        <Image source={require('./assets/google1.jpeg')} style={styles.image} />
-      </View>
-    </View>
-
-  )
+    )
+  }
 }
 const styles = StyleSheet.create({
   view: {
@@ -80,13 +112,9 @@ const styles = StyleSheet.create({
   image: {
     width: 115, height: 40, borderWidth: 2, borderColor: "grey", margin: 30
   },
-  buttoncontainer: {
-    flex: 1, justifyContent: "center", alignItems: "center", marginRight: 10, backgroundColor: "green"
-  },
-  buttonText: {
-    color: "black",
-    fontSize: 14,
-    fontWeight: "bold"
+  button:{
+    width:"16%",height:35,alignItems:"center",justifyContent:"center",backgroundColor:"lightgreen",
+    marginLeft:163
   }
 })
 export default App;
