@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { View, Text, TextInput, Image, StyleSheet,Button,TouchableOpacity } from "react-native";
+import { View, Text, TextInput, Image, StyleSheet, Button, TouchableOpacity } from "react-native";
 
 class App extends React.Component {
   constructor() {
@@ -24,42 +24,41 @@ class App extends React.Component {
       <View>
 
         <View style={styles.view}>
-          <Text>{"\n"} {"\n"} {"\n"} {"\n"} {"\n"}</Text>
           <Image source={require('./assets/grocery.png')} style={{ width: 200, height: 50, marginLeft: 75 }} />
           <Text style={styles.text}>Welcome back!  {"\n"} {"\n"}</Text>
 
-            <View style={styles.icon}>
-          
-              <View style={styles.sectionStyle}>
-                <Image source={require('./assets/email.jpeg')} style={styles.imgstyle} />
-                <TextInput placeholder="eg:example@gmail.com"
-                  style={{ flex: 1 }}
-                  onBlur={() => this.emailValidator()}
-                  onChangeText={(text) => this.setState({ email: text })}
-                />
-                <Text style={{ color: "red" }}>{"\n"} {this.state.emailError}</Text>
-                
-              </View>
+          <View style={styles.icon}>
 
-              <View style={styles.sectionStyle}>
-                <Image source={require('./assets/key.jpeg')} style={styles.imgstyle}></Image>
-                <TextInput placeholder="Password"
-                  keyboardType="numeric"
-                  style={{ flex: 1 }}
-                  maxLength={5}
-                />
-                <Image source={require('./assets/eye.jpeg')} style={styles.imgstyle}></Image>
-              </View>
+            <View style={styles.sectionStyle}>
+              <Image source={require('./assets/email.jpeg')} style={styles.imgstyle} />
+              <TextInput placeholder="eg:example@gmail.com"
+                style={{ flex: 1 }}
+                onBlur={() => this.emailValidator()}
+                onChangeText={(text) => this.setState({ email: text })}
+              />
+              <Text style={{ color: "red" }}>{"\n"} {this.state.emailError}</Text>
+
             </View>
-  
+
+            <View style={styles.sectionStyle}>
+              <Image source={require('./assets/key.jpeg')} style={styles.imgstyle}></Image>
+              <TextInput placeholder="Password"
+                keyboardType="numeric"
+                style={{ flex: 1 }}
+                maxLength={5}
+              />
+              <Image source={require('./assets/eye.jpeg')} style={styles.imgstyle}></Image>
+            </View>
+          </View>
+
         </View>
 
         <Text style={{ textAlign: "center", color: "lightgreen" }}>{"\n"} {"\n"} {"\n"} Forgot Password? </Text>
         <Text>{"\n"}</Text>
 
         <TouchableOpacity style={styles.button}>
-            <Text style={{fontSize:16}}>Login</Text>
-            </TouchableOpacity> 
+          <Text style={{ fontSize: 16 }}>Login</Text>
+        </TouchableOpacity>
         <Text>{"\n"}</Text>
         <Image source={require('./assets/or.png')} style={{ marginLeft: 22 }}></Image>
         <Text>{"\n"}</Text>
@@ -67,7 +66,7 @@ class App extends React.Component {
 
         <View style={styles.container}>
           <Image source={require('./assets/facebook.jpeg')} style={styles.image} />
-          <Image source={require('./assets/google1.jpeg')} style={styles.image} />
+          <Image source={require('./assets/google1.jpeg')} style={styles.image} resizeMode="contain" />
         </View>
       </View>
 
@@ -76,7 +75,7 @@ class App extends React.Component {
 }
 const styles = StyleSheet.create({
   view: {
-    padding: 20, height: 300
+    padding: 20, height: 300, paddingTop: 130
   },
   icon: {
     flex: 1, justifyContent: "center", alignItems: "center", margin: 10
@@ -112,9 +111,9 @@ const styles = StyleSheet.create({
   image: {
     width: 115, height: 40, borderWidth: 2, borderColor: "grey", margin: 30
   },
-  button:{
-    width:"16%",height:35,alignItems:"center",justifyContent:"center",backgroundColor:"lightgreen",
-    marginLeft:163
+  button: {
+    width: "16%", height: 35, alignItems: "center", justifyContent: "center", backgroundColor: "lightgreen",
+    marginLeft: 163
   }
 })
 export default App;
